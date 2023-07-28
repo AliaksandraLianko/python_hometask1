@@ -1,0 +1,45 @@
+import random
+# create empty list 'numbers'
+numbers = []
+# create variable i with value 0
+i = 0
+# create While condition to execute when variable i is less than 100
+while i < 100:
+    # select value 'a' as random value in range from 0 to 1000
+    a = random.randint(0, 1000)
+    # add received random number 'a' to the end of the list 'numbers'
+    numbers.append(a)
+    # increment variable i for 1
+    i = i + 1
+# print list to console, sort list items ascending
+print(sorted(numbers))
+# create variable to count even numbers from the list 'numbers'
+even_count = 0
+# create variable to count sum of even numbers from the list 'numbers'
+even_sum = 0
+# create variable to count odd numbers from the list 'numbers'
+odd_count = 0
+# create variable to count sum of odd numbers from the list 'numbers'
+odd_sum = 0
+# create variable to navigate through items in list 'numbers'
+num = 0
+# create While condition to execute for all elements of 'numbers' list one by one
+while num < len(numbers):
+    # set condition to check if selected list item can be divided by 2 with 0 symbols after dot
+    if numbers[num] % 2 == 0:
+        # add 1 to the variable which counts number of even numbers
+        even_count += 1
+        # add received number from the list 'numbers' to the variable which counts sum of even numbers
+        even_sum += num
+    # if the 'if' condition is not met - number has not zero value after dot after division by 2
+    else:
+        # add 1 to the variable which counts number of odd numbers
+        odd_count += 1
+        # add received number from the list 'numbers' to the variable which counts sum of odd numbers
+        odd_sum += num
+    # increase number of list item in 'numbers' by 1
+    num += 1
+# print average number of even numbers from 'numbers' list to console
+print("Average even: ", even_sum/even_count)
+# print average number of odd numbers from 'numbers' list to console
+print("Average odd: ", odd_sum/odd_count)
